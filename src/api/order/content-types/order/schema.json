@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number": {
+      "type": "integer"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    },
+    "order_status": {
+      "type": "enumeration",
+      "enum": [
+        "Delivered",
+        "Pending",
+        "Cancelled"
+      ]
+    },
+    "total_amount": {
+      "type": "integer"
+    },
+    "payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "cash",
+        "card"
+      ]
+    },
+    "payment_status": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "paid",
+        "refunded",
+        "partially_refunded"
+      ]
+    },
+    "shipping_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::address.address"
+    },
+    "billing_address": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::address.address"
+    },
+    "shipment_tracking": {
+      "type": "integer"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "order_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item",
+      "mappedBy": "order"
+    }
+  }
+}
