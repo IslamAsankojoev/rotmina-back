@@ -1,0 +1,434 @@
+[
+  {
+    "uri": {
+      "specId": "strapi.json",
+      "type": "specification",
+      "identifier": "strapi.json"
+    },
+    "description": "",
+    "operations": [
+      {
+        "path": "/addresses",
+        "method": "get",
+        "operationId": "get/addresses"
+      },
+      {
+        "path": "/addresses",
+        "method": "post",
+        "operationId": "post/addresses"
+      },
+      {
+        "path": "/addresses/{id}",
+        "method": "get",
+        "operationId": "get/addresses/{id}"
+      },
+      {
+        "path": "/addresses/{id}",
+        "method": "put",
+        "operationId": "put/addresses/{id}"
+      },
+      {
+        "path": "/addresses/{id}",
+        "method": "delete",
+        "operationId": "delete/addresses/{id}"
+      },
+      {
+        "path": "/colors",
+        "method": "get",
+        "operationId": "get/colors"
+      },
+      {
+        "path": "/colors",
+        "method": "post",
+        "operationId": "post/colors"
+      },
+      {
+        "path": "/colors/{id}",
+        "method": "get",
+        "operationId": "get/colors/{id}"
+      },
+      {
+        "path": "/colors/{id}",
+        "method": "put",
+        "operationId": "put/colors/{id}"
+      },
+      {
+        "path": "/colors/{id}",
+        "method": "delete",
+        "operationId": "delete/colors/{id}"
+      },
+      {
+        "path": "/global",
+        "method": "get",
+        "operationId": "get/global"
+      },
+      {
+        "path": "/global",
+        "method": "put",
+        "operationId": "put/global"
+      },
+      {
+        "path": "/global",
+        "method": "delete",
+        "operationId": "delete/global"
+      },
+      {
+        "path": "/orders",
+        "method": "get",
+        "operationId": "get/orders"
+      },
+      {
+        "path": "/orders",
+        "method": "post",
+        "operationId": "post/orders"
+      },
+      {
+        "path": "/orders/{id}",
+        "method": "get",
+        "operationId": "get/orders/{id}"
+      },
+      {
+        "path": "/orders/{id}",
+        "method": "put",
+        "operationId": "put/orders/{id}"
+      },
+      {
+        "path": "/orders/{id}",
+        "method": "delete",
+        "operationId": "delete/orders/{id}"
+      },
+      {
+        "path": "/order-items",
+        "method": "get",
+        "operationId": "get/order-items"
+      },
+      {
+        "path": "/order-items",
+        "method": "post",
+        "operationId": "post/order-items"
+      },
+      {
+        "path": "/order-items/{id}",
+        "method": "get",
+        "operationId": "get/order-items/{id}"
+      },
+      {
+        "path": "/order-items/{id}",
+        "method": "put",
+        "operationId": "put/order-items/{id}"
+      },
+      {
+        "path": "/order-items/{id}",
+        "method": "delete",
+        "operationId": "delete/order-items/{id}"
+      },
+      {
+        "path": "/products",
+        "method": "get",
+        "operationId": "get/products"
+      },
+      {
+        "path": "/products",
+        "method": "post",
+        "operationId": "post/products"
+      },
+      {
+        "path": "/products/{id}",
+        "method": "get",
+        "operationId": "get/products/{id}"
+      },
+      {
+        "path": "/products/{id}",
+        "method": "put",
+        "operationId": "put/products/{id}"
+      },
+      {
+        "path": "/products/{id}",
+        "method": "delete",
+        "operationId": "delete/products/{id}"
+      },
+      {
+        "path": "/sizes",
+        "method": "get",
+        "operationId": "get/sizes"
+      },
+      {
+        "path": "/sizes",
+        "method": "post",
+        "operationId": "post/sizes"
+      },
+      {
+        "path": "/sizes/{id}",
+        "method": "get",
+        "operationId": "get/sizes/{id}"
+      },
+      {
+        "path": "/sizes/{id}",
+        "method": "put",
+        "operationId": "put/sizes/{id}"
+      },
+      {
+        "path": "/sizes/{id}",
+        "method": "delete",
+        "operationId": "delete/sizes/{id}"
+      },
+      {
+        "path": "/variants",
+        "method": "get",
+        "operationId": "get/variants"
+      },
+      {
+        "path": "/variants",
+        "method": "post",
+        "operationId": "post/variants"
+      },
+      {
+        "path": "/variants/{id}",
+        "method": "get",
+        "operationId": "get/variants/{id}"
+      },
+      {
+        "path": "/variants/{id}",
+        "method": "put",
+        "operationId": "put/variants/{id}"
+      },
+      {
+        "path": "/variants/{id}",
+        "method": "delete",
+        "operationId": "delete/variants/{id}"
+      },
+      {
+        "path": "/upload",
+        "method": "post",
+        "description": "Upload files"
+      },
+      {
+        "path": "/upload?id={id}",
+        "method": "post",
+        "description": "Upload file information"
+      },
+      {
+        "path": "/upload/files",
+        "method": "get"
+      },
+      {
+        "path": "/upload/files/{id}",
+        "method": "get"
+      },
+      {
+        "path": "/upload/files/{id}",
+        "method": "delete"
+      },
+      {
+        "path": "/connect/{provider}",
+        "method": "get",
+        "description": "Redirects to provider login before being redirect to /auth/{provider}/callback"
+      },
+      {
+        "path": "/auth/local",
+        "method": "post",
+        "description": "Returns a jwt token and user info"
+      },
+      {
+        "path": "/auth/local/register",
+        "method": "post",
+        "description": "Returns a jwt token and user info"
+      },
+      {
+        "path": "/auth/{provider}/callback",
+        "method": "get"
+      },
+      {
+        "path": "/auth/forgot-password",
+        "method": "post"
+      },
+      {
+        "path": "/auth/reset-password",
+        "method": "post"
+      },
+      {
+        "path": "/auth/change-password",
+        "method": "post"
+      },
+      {
+        "path": "/auth/email-confirmation",
+        "method": "get"
+      },
+      {
+        "path": "/auth/send-email-confirmation",
+        "method": "post"
+      },
+      {
+        "path": "/users-permissions/permissions",
+        "method": "get"
+      },
+      {
+        "path": "/users-permissions/roles",
+        "method": "get"
+      },
+      {
+        "path": "/users-permissions/roles",
+        "method": "post"
+      },
+      {
+        "path": "/users-permissions/roles/{id}",
+        "method": "get"
+      },
+      {
+        "path": "/users-permissions/roles/{role}",
+        "method": "put"
+      },
+      {
+        "path": "/users-permissions/roles/{role}",
+        "method": "delete"
+      },
+      {
+        "path": "/users",
+        "method": "get"
+      },
+      {
+        "path": "/users",
+        "method": "post"
+      },
+      {
+        "path": "/users/{id}",
+        "method": "get"
+      },
+      {
+        "path": "/users/{id}",
+        "method": "put"
+      },
+      {
+        "path": "/users/{id}",
+        "method": "delete"
+      },
+      {
+        "path": "/users/me",
+        "method": "get"
+      },
+      {
+        "path": "/users/count",
+        "method": "get"
+      }
+    ],
+    "schemas": [
+      {
+        "name": "Error"
+      },
+      {
+        "name": "AddressRequest"
+      },
+      {
+        "name": "AddressListResponse"
+      },
+      {
+        "name": "Address"
+      },
+      {
+        "name": "AddressResponse"
+      },
+      {
+        "name": "ColorRequest"
+      },
+      {
+        "name": "ColorListResponse"
+      },
+      {
+        "name": "Color"
+      },
+      {
+        "name": "ColorResponse"
+      },
+      {
+        "name": "GlobalRequest"
+      },
+      {
+        "name": "GlobalListResponse"
+      },
+      {
+        "name": "Global"
+      },
+      {
+        "name": "GlobalResponse"
+      },
+      {
+        "name": "SharedSeoComponent"
+      },
+      {
+        "name": "OrderRequest"
+      },
+      {
+        "name": "OrderListResponse"
+      },
+      {
+        "name": "Order"
+      },
+      {
+        "name": "OrderResponse"
+      },
+      {
+        "name": "OrderItemRequest"
+      },
+      {
+        "name": "OrderItemListResponse"
+      },
+      {
+        "name": "OrderItem"
+      },
+      {
+        "name": "OrderItemResponse"
+      },
+      {
+        "name": "ProductRequest"
+      },
+      {
+        "name": "ProductListResponse"
+      },
+      {
+        "name": "Product"
+      },
+      {
+        "name": "ProductResponse"
+      },
+      {
+        "name": "SizeRequest"
+      },
+      {
+        "name": "SizeListResponse"
+      },
+      {
+        "name": "Size"
+      },
+      {
+        "name": "SizeResponse"
+      },
+      {
+        "name": "VariantRequest"
+      },
+      {
+        "name": "VariantListResponse"
+      },
+      {
+        "name": "Variant"
+      },
+      {
+        "name": "VariantResponse"
+      },
+      {
+        "name": "UploadFile"
+      },
+      {
+        "name": "Users-Permissions-Role"
+      },
+      {
+        "name": "Users-Permissions-User"
+      },
+      {
+        "name": "Users-Permissions-UserRegistration"
+      },
+      {
+        "name": "Users-Permissions-PermissionsTree"
+      }
+    ]
+  }
+]
