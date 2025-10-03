@@ -1,11 +1,11 @@
-export default () => ({
+export default ({ env }) => ({
   'strapi-v5-http-only-auth': {
     enabled: true,
     config: {
       cookieOptions: {
         secure: false,
         sameSite: 'Lax',
-        domain: 'localhost',
+        domain: env('ORIGIN', 'localhost'),
         path: '/',
         maxAge: 24 * 60 * 60 * 1000,
       },
