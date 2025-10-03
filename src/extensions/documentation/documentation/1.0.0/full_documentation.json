@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-25T05:15:31.557Z"
+    "x-generation-date": "2025-10-02T18:13:55.748Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6580,6 +6580,9 @@
                                   "slug": {
                                     "type": "string"
                                   },
+                                  "hex": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -7172,6 +7175,9 @@
               "slug": {
                 "type": "string"
               },
+              "hex": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -7244,6 +7250,9 @@
             "type": "string"
           },
           "slug": {
+            "type": "string"
+          },
+          "hex": {
             "type": "string"
           },
           "createdAt": {
@@ -7553,6 +7562,9 @@
                   "type": "string"
                 },
                 "slug": {
+                  "type": "string"
+                },
+                "hex": {
                   "type": "string"
                 },
                 "createdAt": {
@@ -10006,6 +10018,9 @@
                                   "slug": {
                                     "type": "string"
                                   },
+                                  "hex": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -11913,6 +11928,9 @@
                             "slug": {
                               "type": "string"
                             },
+                            "hex": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -13413,6 +13431,9 @@
                       "type": "string"
                     },
                     "slug": {
+                      "type": "string"
+                    },
+                    "hex": {
                       "type": "string"
                     },
                     "createdAt": {
@@ -15059,6 +15080,9 @@
                           "type": "string"
                         },
                         "slug": {
+                          "type": "string"
+                        },
+                        "hex": {
                           "type": "string"
                         },
                         "createdAt": {
