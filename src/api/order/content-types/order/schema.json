@@ -22,10 +22,11 @@
     },
     "order_status": {
       "type": "enumeration",
+      "default": "pending",
       "enum": [
-        "Delivered",
-        "Pending",
-        "Cancelled"
+        "delivered",
+        "pending",
+        "cancelled"
       ]
     },
     "total_amount": {
@@ -40,6 +41,7 @@
     },
     "payment_status": {
       "type": "enumeration",
+      "default": "unpaid",
       "enum": [
         "unpaid",
         "paid",

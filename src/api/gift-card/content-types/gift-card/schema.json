@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gift_cards",
+  "info": {
+    "singularName": "gift-card",
+    "pluralName": "gift-cards",
+    "displayName": "Gift card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recipientsName": {
+      "type": "string"
+    },
+    "recipientsEmail": {
+      "type": "string"
+    },
+    "yourName": {
+      "type": "string"
+    },
+    "yourEmail": {
+      "type": "string"
+    },
+    "personalMessage": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid",
+      "options": {
+        "uuid-format": "^[A-Za-z0-9]{5}$",
+        "disable-auto-fill": false,
+        "disable-regenerate": true
+      }
+    }
+  }
+}

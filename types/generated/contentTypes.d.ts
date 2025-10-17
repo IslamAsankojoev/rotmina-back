@@ -439,6 +439,55 @@ export interface ApiColorColor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGiftCardGiftCard extends Struct.CollectionTypeSchema {
+  collectionName: 'gift_cards';
+  info: {
+    displayName: 'Gift card';
+    pluralName: 'gift-cards';
+    singularName: 'gift-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    amount: Schema.Attribute.Integer;
+    code: Schema.Attribute.UID<
+      undefined,
+      {
+        'disable-auto-fill': false;
+        'disable-regenerate': true;
+        'uuid-format': '^[A-Za-z0-9]{5}$';
+      }
+    > &
+      Schema.Attribute.CustomField<
+        'plugin::strapi-advanced-uuid.uuid',
+        {
+          'disable-auto-fill': false;
+          'disable-regenerate': true;
+          'uuid-format': '^[A-Za-z0-9]{5}$';
+        }
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gift-card.gift-card'
+    > &
+      Schema.Attribute.Private;
+    personalMessage: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    recipientsEmail: Schema.Attribute.String;
+    recipientsName: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    yourEmail: Schema.Attribute.String;
+    yourName: Schema.Attribute.String;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -533,12 +582,14 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
       'api::order-item.order-item'
     >;
     order_status: Schema.Attribute.Enumeration<
-      ['Delivered', 'Pending', 'Cancelled']
-    >;
+      ['delivered', 'pending', 'cancelled']
+    > &
+      Schema.Attribute.DefaultTo<'pending'>;
     payment_method: Schema.Attribute.Enumeration<['cash', 'card']>;
     payment_status: Schema.Attribute.Enumeration<
       ['unpaid', 'paid', 'refunded', 'partially_refunded']
-    >;
+    > &
+      Schema.Attribute.DefaultTo<'unpaid'>;
     publishedAt: Schema.Attribute.DateTime;
     shipment_tracking: Schema.Attribute.Integer;
     shipping_address: Schema.Attribute.Relation<
@@ -553,6 +604,37 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+  };
+}
+
+export interface ApiPersonalStylistPersonalStylist
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'personal_stylists';
+  info: {
+    displayName: 'Personal Stylist';
+    pluralName: 'personal-stylists';
+    singularName: 'personal-stylist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hours: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::personal-stylist.personal-stylist'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    sessionType: Schema.Attribute.Enumeration<['online', 'at-your-home']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1169,9 +1251,11 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::address.address': ApiAddressAddress;
       'api::color.color': ApiColorColor;
+      'api::gift-card.gift-card': ApiGiftCardGiftCard;
       'api::global.global': ApiGlobalGlobal;
       'api::order-item.order-item': ApiOrderItemOrderItem;
       'api::order.order': ApiOrderOrder;
+      'api::personal-stylist.personal-stylist': ApiPersonalStylistPersonalStylist;
       'api::product.product': ApiProductProduct;
       'api::size.size': ApiSizeSize;
       'api::variant.variant': ApiVariantVariant;

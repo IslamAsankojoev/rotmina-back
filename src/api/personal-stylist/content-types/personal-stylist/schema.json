@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "personal_stylists",
+  "info": {
+    "singularName": "personal-stylist",
+    "pluralName": "personal-stylists",
+    "displayName": "Personal Stylist"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hours": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "sessionType": {
+      "type": "enumeration",
+      "enum": [
+        "online",
+        "at-your-home"
+      ]
+    }
+  }
+}
