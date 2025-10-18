@@ -80,6 +80,10 @@
       "relation": "oneToMany",
       "target": "api::order.order",
       "mappedBy": "users_permissions_user"
+    },
+    "surname": {
+      "type": "string",
+      "description": "Фамилия пользователя"
     }
   }
 }
