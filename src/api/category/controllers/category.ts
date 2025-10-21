@@ -10,7 +10,6 @@ export default factories.createCoreController('api::category.category', ({ strap
 
     const dataWithCount = await Promise.all(
       data.map(async (category) => {
-        // Получаем категорию с populate products
         const categoryWithProducts = await strapi.documents('api::category.category').findOne({
           documentId: category.documentId,
           populate: ['products'],
@@ -33,7 +32,6 @@ export default factories.createCoreController('api::category.category', ({ strap
     const response = await super.findOne(ctx)
     const category = response.data
 
-    // Получаем категорию с populate products
     const categoryWithProducts = await strapi.documents('api::category.category').findOne({
       documentId: category.documentId,
       populate: ['products']
