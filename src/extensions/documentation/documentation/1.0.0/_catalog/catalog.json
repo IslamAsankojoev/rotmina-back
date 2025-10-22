@@ -33,6 +33,56 @@
         "operationId": "delete/addresses/{id}"
       },
       {
+        "path": "/categories",
+        "method": "get",
+        "operationId": "get/categories"
+      },
+      {
+        "path": "/categories",
+        "method": "post",
+        "operationId": "post/categories"
+      },
+      {
+        "path": "/categories/{id}",
+        "method": "get",
+        "operationId": "get/categories/{id}"
+      },
+      {
+        "path": "/categories/{id}",
+        "method": "put",
+        "operationId": "put/categories/{id}"
+      },
+      {
+        "path": "/categories/{id}",
+        "method": "delete",
+        "operationId": "delete/categories/{id}"
+      },
+      {
+        "path": "/collections",
+        "method": "get",
+        "operationId": "get/collections"
+      },
+      {
+        "path": "/collections",
+        "method": "post",
+        "operationId": "post/collections"
+      },
+      {
+        "path": "/collections/{id}",
+        "method": "get",
+        "operationId": "get/collections/{id}"
+      },
+      {
+        "path": "/collections/{id}",
+        "method": "put",
+        "operationId": "put/collections/{id}"
+      },
+      {
+        "path": "/collections/{id}",
+        "method": "delete",
+        "operationId": "delete/collections/{id}"
+      },
+      {
         "path": "/colors",
         "method": "get",
         "operationId": "get/colors"
@@ -376,6 +426,30 @@
       },
       {
         "name": "AddressResponse"
+      },
+      {
+        "name": "CategoryRequest"
+      },
+      {
+        "name": "CategoryListResponse"
+      },
+      {
+        "name": "Category"
+      },
+      {
+        "name": "CategoryResponse"
+      },
+      {
+        "name": "CollectionRequest"
+      },
+      {
+        "name": "CollectionListResponse"
+      },
+      {
+        "name": "Collection"
+      },
+      {
+        "name": "CollectionResponse"
       },
       {
         "name": "ColorRequest"
