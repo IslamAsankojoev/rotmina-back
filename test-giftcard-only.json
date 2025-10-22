@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "id": "test-giftcard-1",
+      "type": "giftcard",
+      "amount": "1000",
+      "recipientEmail": "test@example.com",
+      "recipientName": "Тест Тестов",
+      "message": "Тестовое сообщение",
+      "quantity": 1,
+      "price": "1000",
+      "createdAt": "2025-01-27T10:00:00.000Z"
+    }
+  ],
+  "totalItems": 1,
+  "totalPrice": 1000
+}

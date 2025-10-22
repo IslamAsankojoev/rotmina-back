@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "id": "cart-item-test-giftcard-1",
+      "type": "giftcard",
+      "amount": "500",
+      "recipientEmail": "test@example.com",
+      "recipientName": "Иван Петров",
+      "message": "Поздравляю с днем рождения!",
+      "quantity": 1,
+      "price": "500",
+      "createdAt": "2025-01-27T10:00:00.000Z"
+    }
+  ],
+  "totalItems": 1,
+  "totalPrice": 500
+}
