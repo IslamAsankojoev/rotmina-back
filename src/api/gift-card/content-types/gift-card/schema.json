@@ -37,6 +37,12 @@
         "disable-auto-fill": false,
         "disable-regenerate": true
       }
+    },
+    "order_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-item.order-item",
+      "mappedBy": "gift_card"
     }
   }
 }

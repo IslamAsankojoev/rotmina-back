@@ -538,6 +538,10 @@ export interface ApiGiftCardGiftCard extends Struct.CollectionTypeSchema {
       'api::gift-card.gift-card'
     > &
       Schema.Attribute.Private;
+    order_item: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::order-item.order-item'
+    >;
     personalMessage: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     recipientsEmail: Schema.Attribute.String;
@@ -596,6 +600,10 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    gift_card: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::gift-card.gift-card'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -688,13 +696,13 @@ export interface ApiPersonalStylistPersonalStylist
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hours: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::personal-stylist.personal-stylist'
     > &
       Schema.Attribute.Private;
+    minutes: Schema.Attribute.Integer;
     price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     sessionType: Schema.Attribute.Enumeration<['online', 'at-your-home']>;

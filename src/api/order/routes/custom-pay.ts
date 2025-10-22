@@ -2,8 +2,8 @@ export default {
   routes: [
     {
       method: 'POST',
-      path: '/orders/pay',
-      handler: 'order.pay',
+      path: '/orders/make-order',
+      handler: 'order.makeOrder',
     },
   ],
 };

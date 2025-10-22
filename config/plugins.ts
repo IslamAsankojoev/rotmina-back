@@ -35,9 +35,6 @@ export default ({ env }) => ({
       register: {
         allowedFields: ["surname"],
       },
-      jwt: {
-        expiresIn: '1h',
-      },
     },
   },
 });
