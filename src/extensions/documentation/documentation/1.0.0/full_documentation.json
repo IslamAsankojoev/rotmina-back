@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-10-22T12:16:18.646Z"
+    "x-generation-date": "2025-10-22T16:51:45.673Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -7402,24 +7402,6 @@
               "label": {
                 "type": "string"
               },
-              "country": {
-                "type": "string"
-              },
-              "city": {
-                "type": "string"
-              },
-              "street": {
-                "type": "string"
-              },
-              "house": {
-                "type": "string"
-              },
-              "apartment": {
-                "type": "string"
-              },
-              "is_default": {
-                "type": "boolean"
-              },
               "locale": {
                 "type": "string"
               },
@@ -7959,24 +7941,6 @@
                     },
                     "label": {
                       "type": "string"
-                    },
-                    "country": {
-                      "type": "string"
-                    },
-                    "city": {
-                      "type": "string"
-                    },
-                    "street": {
-                      "type": "string"
-                    },
-                    "house": {
-                      "type": "string"
-                    },
-                    "apartment": {
-                      "type": "string"
-                    },
-                    "is_default": {
-                      "type": "boolean"
                     },
                     "createdAt": {
                       "type": "string",
@@ -9473,6 +9437,9 @@
                                   }
                                 }
                               },
+                              "is_used": {
+                                "type": "boolean"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -9525,6 +9492,14 @@
                                 }
                               }
                             }
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "product",
+                              "giftcard",
+                              "personalStylist"
+                            ]
                           },
                           "createdAt": {
                             "type": "string",
@@ -9689,24 +9664,6 @@
           },
           "label": {
             "type": "string"
-          },
-          "country": {
-            "type": "string"
-          },
-          "city": {
-            "type": "string"
-          },
-          "street": {
-            "type": "string"
-          },
-          "house": {
-            "type": "string"
-          },
-          "apartment": {
-            "type": "string"
-          },
-          "is_default": {
-            "type": "boolean"
           },
           "createdAt": {
             "type": "string",
@@ -13822,6 +13779,9 @@
                 ],
                 "example": "string or id"
               },
+              "is_used": {
+                "type": "boolean"
+              },
               "locale": {
                 "type": "string"
               },
@@ -14403,24 +14363,6 @@
                             },
                             "label": {
                               "type": "string"
-                            },
-                            "country": {
-                              "type": "string"
-                            },
-                            "city": {
-                              "type": "string"
-                            },
-                            "street": {
-                              "type": "string"
-                            },
-                            "house": {
-                              "type": "string"
-                            },
-                            "apartment": {
-                              "type": "string"
-                            },
-                            "is_default": {
-                              "type": "boolean"
                             },
                             "createdAt": {
                               "type": "string",
@@ -16004,6 +15946,9 @@
                       }
                     }
                   },
+                  "is_used": {
+                    "type": "boolean"
+                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -16057,6 +16002,14 @@
                   }
                 }
               },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "product",
+                  "giftcard",
+                  "personalStylist"
+                ]
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -16109,6 +16062,9 @@
                 }
               }
             }
+          },
+          "is_used": {
+            "type": "boolean"
           },
           "createdAt": {
             "type": "string",
@@ -17914,24 +17870,6 @@
                     "label": {
                       "type": "string"
                     },
-                    "country": {
-                      "type": "string"
-                    },
-                    "city": {
-                      "type": "string"
-                    },
-                    "street": {
-                      "type": "string"
-                    },
-                    "house": {
-                      "type": "string"
-                    },
-                    "apartment": {
-                      "type": "string"
-                    },
-                    "is_default": {
-                      "type": "boolean"
-                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -19427,6 +19365,9 @@
                                   }
                                 }
                               },
+                              "is_used": {
+                                "type": "boolean"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -19479,6 +19420,14 @@
                                 }
                               }
                             }
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "product",
+                              "giftcard",
+                              "personalStylist"
+                            ]
                           },
                           "createdAt": {
                             "type": "string",
@@ -19842,6 +19791,14 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "product",
+                  "giftcard",
+                  "personalStylist"
+                ]
               },
               "locale": {
                 "type": "string"
@@ -20394,24 +20351,6 @@
                         },
                         "label": {
                           "type": "string"
-                        },
-                        "country": {
-                          "type": "string"
-                        },
-                        "city": {
-                          "type": "string"
-                        },
-                        "street": {
-                          "type": "string"
-                        },
-                        "house": {
-                          "type": "string"
-                        },
-                        "apartment": {
-                          "type": "string"
-                        },
-                        "is_default": {
-                          "type": "boolean"
                         },
                         "createdAt": {
                           "type": "string",
@@ -21950,6 +21889,9 @@
                             }
                           }
                         },
+                        "is_used": {
+                          "type": "boolean"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -22002,6 +21944,14 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "product",
+                        "giftcard",
+                        "personalStylist"
+                      ]
                     },
                     "createdAt": {
                       "type": "string",
@@ -22158,6 +22108,14 @@
                 "type": "string"
               }
             }
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "product",
+              "giftcard",
+              "personalStylist"
+            ]
           },
           "createdAt": {
             "type": "string",

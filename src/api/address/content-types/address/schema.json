@@ -19,24 +19,6 @@
     },
     "label": {
       "type": "string"
-    },
-    "country": {
-      "type": "string"
-    },
-    "city": {
-      "type": "string"
-    },
-    "street": {
-      "type": "string"
-    },
-    "house": {
-      "type": "string"
-    },
-    "apartment": {
-      "type": "string"
-    },
-    "is_default": {
-      "type": "boolean"
     }
   }
 }

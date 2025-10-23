@@ -43,6 +43,9 @@
       "relation": "oneToOne",
       "target": "api::order-item.order-item",
       "mappedBy": "gift_card"
+    },
+    "is_used": {
+      "type": "boolean"
     }
   }
 }

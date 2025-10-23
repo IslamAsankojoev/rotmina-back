@@ -3,7 +3,7 @@ import { factories } from '@strapi/strapi'
 export default factories.createCoreController('api::order.order', ({ strapi }) => ({
   async makeOrder(ctx) {
     try {
-      const { items, totalItems, totalPrice, addressId, payment_method, payment_status, notes } =
+      const { items, totalPrice, addressId, payment_method, payment_status, notes } =
         ctx.request.body
 
       if (!items || !Array.isArray(items) || items.length === 0) {
@@ -14,7 +14,6 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
         return ctx.badRequest('Необходимо указать адрес доставки')
       }
 
-      // Проверяем существование адреса
       const address = await strapi.documents('api::address.address').findOne({
         documentId: addressId,
       })
@@ -37,8 +36,6 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
         payment_status: payment_status as 'unpaid' | 'paid' | 'refunded' | 'partially_refunded',
         notes: notes as string,
       }
-
-      console.log('Создаем заказ с данными:', orderData)
 
       const order = await strapi.documents('api::order.order').create({
         data: orderData,
@@ -73,6 +70,7 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
             orderItemData.title_snapshot = `Подарочная карта на ${item.amount} руб.`
             orderItemData.sku_snapshot = `GIFT-${giftCard.code}`
             orderItemData.price_snapshot = item.amount.toString()
+            orderItemData.type = 'giftcard'
             break
 
           case 'personalStylist':
@@ -95,6 +93,7 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
             orderItemData.title_snapshot = `Персональный стилист (${item.sessionType})`
             orderItemData.sku_snapshot = `STYLIST-${personalStylist.id}`
             orderItemData.price_snapshot = item.price.toString()
+            orderItemData.type = 'personalStylist'
             break
 
           case 'product':
@@ -103,6 +102,7 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
             orderItemData.title_snapshot = item.productTitle
             orderItemData.sku_snapshot = item.variant.sku
             orderItemData.price_snapshot = item.price.toString()
+            orderItemData.type = 'product'
             break
 
           default:
@@ -174,7 +174,7 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
             populate: {
               variant: {
                 populate: {
-                  product: true,
+                  images: true,
                 },
               },
             },

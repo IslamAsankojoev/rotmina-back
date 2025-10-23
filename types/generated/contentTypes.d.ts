@@ -384,14 +384,9 @@ export interface ApiAddressAddress extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    apartment: Schema.Attribute.String;
-    city: Schema.Attribute.String;
-    country: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    house: Schema.Attribute.String;
-    is_default: Schema.Attribute.Boolean;
     label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -400,7 +395,6 @@ export interface ApiAddressAddress extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    street: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -532,6 +526,7 @@ export interface ApiGiftCardGiftCard extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    is_used: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -621,6 +616,9 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
     sku_snapshot: Schema.Attribute.String;
     subtotal: Schema.Attribute.Decimal;
     title_snapshot: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      ['product', 'giftcard', 'personalStylist']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
