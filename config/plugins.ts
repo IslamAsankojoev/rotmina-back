@@ -5,7 +5,7 @@ export default ({ env }) => ({
       cookieOptions: {
         secure: false,
         sameSite: 'Lax',
-        domain: 'localhost',
+        domain: env('ORIGIN', 'localhost'),
         path: '/',
         maxAge: 24 * 60 * 60 * 1000,
       },
