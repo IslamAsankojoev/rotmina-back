@@ -71,7 +71,7 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
             })
 
             orderItemData.gift_card = { connect: [giftCard.documentId] }
-            orderItemData.title_snapshot = `Gift card for ${item.amount} rub.`
+            orderItemData.title_snapshot = `Gift card for ${item.gift_card?.recipientsName}.`
             orderItemData.sku_snapshot = `GIFT-${giftCard.code}`
             orderItemData.price_snapshot = item.amount.toString()
             orderItemData.type = 'giftcard'
@@ -94,7 +94,7 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
               })
 
             orderItemData.personal_stylist = { connect: [personalStylist.documentId] }
-            orderItemData.title_snapshot = `Personal stylist (${item.sessionType})`
+            orderItemData.title_snapshot = `Personal stylist (${item.minutes} minutes)`
             orderItemData.sku_snapshot = `STYLIST-${personalStylist.id}`
             orderItemData.price_snapshot = item.price.toString()
             orderItemData.type = 'personalStylist'

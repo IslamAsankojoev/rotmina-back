@@ -34,5 +34,9 @@ COPY --from=build /opt/app ./
 RUN npm ci --omit=dev --ignore-scripts --prefer-offline \
   && npm cache clean --force
 
+RUN mkdir -p /opt/app/public/uploads \
+  && chown -R strapi:strapi /opt/app/public \
+  && chmod -R 755 /opt/app/public
 USER strapi
+
 CMD ["npm","start"]
