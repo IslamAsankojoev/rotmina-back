@@ -17,7 +17,13 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "addresses"
     },
-    "label": {
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "zip_code": {
       "type": "string"
     }
   }

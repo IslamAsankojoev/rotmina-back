@@ -1,17 +1,18 @@
 import { factories } from '@strapi/strapi'
+import { SUCCESS_CODES, getPaymentErrorMessage } from '../../../constants/payment-error-codes'
 
 export default factories.createCoreController('api::order.order', ({ strapi }) => ({
   async makeOrder(ctx) {
     try {
-      const { items, totalPrice, addressId, payment_method, payment_status, notes } =
+      const { items, totalPrice, addressId, payment_method, payment_status, notes, currency_code } =
         ctx.request.body
 
       if (!items || !Array.isArray(items) || items.length === 0) {
-        return ctx.badRequest('Корзина пуста')
+        return ctx.badRequest('Cart is empty')
       }
 
       if (!addressId) {
-        return ctx.badRequest('Необходимо указать адрес доставки')
+        return ctx.badRequest('Shipping address is required')
       }
 
       const address = await strapi.documents('api::address.address').findOne({
@@ -19,12 +20,12 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
       })
 
       if (!address) {
-        return ctx.badRequest('Адрес доставки не найден')
+        return ctx.badRequest('Shipping address not found')
       }
 
       const user = ctx.state.user
       if (!user) {
-        return ctx.unauthorized('Необходима авторизация')
+        return ctx.unauthorized('Authentication required')
       }
 
       const orderData = {
@@ -32,9 +33,12 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
         total_amount: parseInt(totalPrice.toString()),
         order_status: 'pending' as const,
         shipping_address: address.documentId,
+        billing_address: address.documentId,
         payment_method: payment_method as 'cash' | 'card',
         payment_status: payment_status as 'unpaid' | 'paid' | 'refunded' | 'partially_refunded',
         notes: notes as string,
+        order_id: crypto.randomUUID(),
+        currency_code,
       }
 
       const order = await strapi.documents('api::order.order').create({
@@ -53,7 +57,7 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
 
         switch (item.type) {
           case 'giftcard':
-            // Создаем gift-card
+            // Create gift-card
             const giftCardData = {
               recipientsName: item.recipientName,
               recipientsEmail: item.recipientEmail,
@@ -67,14 +71,14 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
             })
 
             orderItemData.gift_card = { connect: [giftCard.documentId] }
-            orderItemData.title_snapshot = `Подарочная карта на ${item.amount} руб.`
+            orderItemData.title_snapshot = `Gift card for ${item.amount} rub.`
             orderItemData.sku_snapshot = `GIFT-${giftCard.code}`
             orderItemData.price_snapshot = item.amount.toString()
             orderItemData.type = 'giftcard'
             break
 
           case 'personalStylist':
-            // Создаем personal-stylist
+            // Create personal-stylist
             const sessionType = item.sessionType === 'in-person' ? 'at-your-home' : 'online'
             const personalStylistData = {
               minutes: item.duration,
@@ -90,14 +94,14 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
               })
 
             orderItemData.personal_stylist = { connect: [personalStylist.documentId] }
-            orderItemData.title_snapshot = `Персональный стилист (${item.sessionType})`
+            orderItemData.title_snapshot = `Personal stylist (${item.sessionType})`
             orderItemData.sku_snapshot = `STYLIST-${personalStylist.id}`
             orderItemData.price_snapshot = item.price.toString()
             orderItemData.type = 'personalStylist'
             break
 
           case 'product':
-            // Для продуктов используем существующий variant
+            // For products use existing variant
             orderItemData.variant = { connect: [item.variant.documentId] }
             orderItemData.title_snapshot = item.productTitle
             orderItemData.sku_snapshot = item.variant.sku
@@ -106,10 +110,10 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
             break
 
           default:
-            throw new Error(`Неизвестный тип товара: ${item.type}`)
+            throw new Error(`Unknown item type: ${item.type}`)
         }
 
-        // Создаем order-item
+        // Create order-item
         const orderItem = await strapi.documents('api::order-item.order-item').create({
           data: orderItemData,
           status: 'published',
@@ -118,7 +122,7 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
         orderItems.push(orderItem)
       }
 
-      // Возвращаем созданный заказ с элементами
+      // Return created order with items
       const createdOrder = await strapi.documents('api::order.order').findOne({
         documentId: order.documentId,
         populate: {
@@ -144,23 +148,23 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
       return ctx.send({
         success: true,
         data: createdOrder,
-        message: 'Заказ успешно создан',
+        message: 'Order successfully created',
       })
     } catch (error) {
-      console.error('Ошибка при создании заказа:', error)
-      console.error('Детали ошибки:', {
+      console.error('Error creating order:', error)
+      console.error('Error details:', {
         message: error.message,
         stack: error.stack,
         body: ctx.request.body,
       })
-      return ctx.internalServerError(`Ошибка при создании заказа: ${error.message}`)
+      return ctx.internalServerError(`Error creating order: ${error.message}`)
     }
   },
   async findMyOrders(ctx) {
     try {
       const user = ctx.state.user
       if (!user) {
-        return ctx.unauthorized('Необходима авторизация')
+        return ctx.unauthorized('Authentication required')
       }
 
       const orders = await strapi.documents('api::order.order').findMany({
@@ -180,16 +184,17 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
             },
           },
         },
+        status: 'published',
       })
 
       return ctx.send({
         success: true,
         data: orders,
-        message: 'Заказы успешно получены',
+        message: 'Orders successfully retrieved',
       })
     } catch (error) {
-      console.error('Ошибка при получении заказов:', error)
-      return ctx.internalServerError(`Ошибка при получении заказов: ${error.message}`)
+      console.error('Error fetching orders:', error)
+      return ctx.internalServerError(`Error fetching orders: ${error.message}`)
     }
   },
 }))

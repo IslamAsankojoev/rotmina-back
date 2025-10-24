@@ -9,6 +9,6 @@ export default {
       method: 'GET',
       path: '/orders/my-orders',
       handler: 'order.findMyOrders',
-    }
+    },
   ],
 };

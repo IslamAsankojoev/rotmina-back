@@ -11,9 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "number": {
-      "type": "integer"
-    },
     "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
@@ -70,6 +67,9 @@
       "relation": "oneToMany",
       "target": "api::order-item.order-item",
       "mappedBy": "order"
+    },
+    "currency_code": {
+      "type": "string"
     }
   }
 }
