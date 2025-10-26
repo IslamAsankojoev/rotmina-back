@@ -34,7 +34,8 @@ export default factories.createCoreController('api::category.category', ({ strap
 
     const categoryWithProducts = await strapi.documents('api::category.category').findOne({
       documentId: category.documentId,
-      populate: ['products']
+      populate: ['products'],
+      status: 'published'
     })
     
     const count = categoryWithProducts?.products?.length || 0

@@ -34,7 +34,8 @@ export default factories.createCoreController('api::collection.collection', ({ s
 
     const collectionWithProducts = await strapi.documents('api::collection.collection').findOne({
       documentId: collection.documentId,
-      populate: ['products']
+      populate: ['products'],
+      status: 'published'
     })
     
     const count = collectionWithProducts?.products?.length || 0
