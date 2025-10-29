@@ -1,5 +1,4 @@
 import { factories } from '@strapi/strapi'
-import { SUCCESS_CODES, getPaymentErrorMessage } from '../../../constants/payment-error-codes'
 
 export default factories.createCoreController('api::order.order', ({ strapi }) => ({
   async makeOrder(ctx) {
@@ -37,7 +36,6 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
         payment_method: payment_method as 'cash' | 'card',
         payment_status: payment_status as 'unpaid' | 'paid' | 'refunded' | 'partially_refunded',
         notes: notes as string,
-        order_id: crypto.randomUUID(),
         currency_code,
       }
 
@@ -79,24 +77,18 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
 
           case 'personalStylist':
             // Create personal-stylist
-            const sessionType = item.sessionType === 'in-person' ? 'at-your-home' : 'online'
-            const personalStylistData = {
-              minutes: item.duration,
-              price: item.price,
-              sessionType: sessionType as 'online' | 'at-your-home',
+            const personalStylist = await strapi.documents('api::personal-stylist.personal-stylist').findOne({
+              documentId: item.documentId,
+            })
+
+            if (!personalStylist) {
+              return ctx.badRequest('Personal stylist not found')
             }
 
-            const personalStylist = await strapi
-              .documents('api::personal-stylist.personal-stylist')
-              .create({
-                data: personalStylistData,
-                status: 'published',
-              })
-
             orderItemData.personal_stylist = { connect: [personalStylist.documentId] }
-            orderItemData.title_snapshot = `Personal stylist (${item.minutes} minutes)`
+            orderItemData.title_snapshot = `Personal stylist (${personalStylist.minutes} minutes)`
             orderItemData.sku_snapshot = `STYLIST-${personalStylist.id}`
-            orderItemData.price_snapshot = item.price.toString()
+            orderItemData.price_snapshot = personalStylist.price.toString()
             orderItemData.type = 'personalStylist'
             break
 
