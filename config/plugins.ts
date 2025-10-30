@@ -3,8 +3,8 @@ export default ({ env }) => ({
     enabled: true,
     config: {
       cookieOptions: {
-        secure: false,
-        sameSite: 'Lax',
+        secure: true,
+        sameSite: 'none',
         domain: env('ORIGIN', 'localhost'),
         path: '/',
         maxAge: 24 * 60 * 60 * 1000,
