@@ -27,15 +27,13 @@
       "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "multiple": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "description": {
@@ -64,6 +62,14 @@
     },
     "delay": {
       "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "link_text": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
