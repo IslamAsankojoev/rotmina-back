@@ -501,6 +501,7 @@ export interface ApiCollectionCollection extends Struct.CollectionTypeSchema {
       'api::collection.collection'
     >;
     name: Schema.Attribute.String &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

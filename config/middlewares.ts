@@ -11,6 +11,7 @@ export default [
     },
   },
   'strapi::poweredBy',
+  'global::locale-from-cookie',
   'strapi::query',
   'strapi::body',
   'strapi::session',

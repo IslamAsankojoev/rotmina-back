@@ -21,7 +21,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "unique": true
     },
     "description": {
       "type": "string",
