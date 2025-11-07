@@ -9,7 +9,11 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "users_permissions_user": {
       "type": "relation",
@@ -19,6 +23,11 @@
     },
     "order_status": {
       "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "default": "pending",
       "enum": [
         "delivered",
@@ -27,10 +36,20 @@
       ]
     },
     "total_amount": {
-      "type": "integer"
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "payment_method": {
       "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "enum": [
         "cash",
         "card"
@@ -38,6 +57,11 @@
     },
     "payment_status": {
       "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "default": "unpaid",
       "enum": [
         "unpaid",
@@ -57,10 +81,20 @@
       "target": "api::address.address"
     },
     "shipment_tracking": {
-      "type": "integer"
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "notes": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "order_items": {
       "type": "relation",
@@ -69,7 +103,12 @@
       "mappedBy": "order"
     },
     "currency_code": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
