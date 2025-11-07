@@ -6,7 +6,7 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:3000', process.env.URL || 'http://localhost:3000'],
+      origin: ['http://localhost:3000', process.env.URL, process.env.CLIENT_URL],
       credentials: true,
     },
   },
