@@ -14,6 +14,11 @@ export default {
       method: 'DELETE',
       path: '/products/remove-from-wishlist/:productId',
       handler: 'product.removeFromWishlist',
-    }
+    },
+    {
+      method: 'GET',
+      path: '/products/get-related/:productId',
+      handler: 'product.getRelatedProducts',
+    },
   ],
-};
+}

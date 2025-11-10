@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-08T13:29:32.230Z"
+    "x-generation-date": "2025-11-10T07:29:33.698Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -9355,6 +9355,12 @@
                                       "slug": {
                                         "type": "string"
                                       },
+                                      "nameHE": {
+                                        "type": "string"
+                                      },
+                                      "descriptionHE": {
+                                        "type": "string"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -9566,6 +9572,12 @@
                                           }
                                         }
                                       },
+                                      "nameHE": {
+                                        "type": "string"
+                                      },
+                                      "descriptionHE": {
+                                        "type": "string"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -9632,6 +9644,12 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "titleHE": {
+                                    "type": "string"
+                                  },
+                                  "descriptionHE": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -10516,6 +10534,12 @@
                 }
               },
               "slug": {
+                "type": "string"
+              },
+              "nameHE": {
+                "type": "string"
+              },
+              "descriptionHE": {
                 "type": "string"
               },
               "locale": {
@@ -11733,6 +11757,12 @@
                     "slug": {
                       "type": "string"
                     },
+                    "nameHE": {
+                      "type": "string"
+                    },
+                    "descriptionHE": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -11943,6 +11973,12 @@
                           }
                         }
                       }
+                    },
+                    "nameHE": {
+                      "type": "string"
+                    },
+                    "descriptionHE": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -12767,6 +12803,12 @@
                     }
                   }
                 },
+                "titleHE": {
+                  "type": "string"
+                },
+                "descriptionHE": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -12822,6 +12864,12 @@
             }
           },
           "slug": {
+            "type": "string"
+          },
+          "nameHE": {
+            "type": "string"
+          },
+          "descriptionHE": {
             "type": "string"
           },
           "createdAt": {
@@ -12927,6 +12975,12 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "nameHE": {
+                "type": "string"
+              },
+              "descriptionHE": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -14143,6 +14197,12 @@
                     "slug": {
                       "type": "string"
                     },
+                    "nameHE": {
+                      "type": "string"
+                    },
+                    "descriptionHE": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -14353,6 +14413,12 @@
                           }
                         }
                       }
+                    },
+                    "nameHE": {
+                      "type": "string"
+                    },
+                    "descriptionHE": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -15177,6 +15243,12 @@
                     }
                   }
                 },
+                "titleHE": {
+                  "type": "string"
+                },
+                "descriptionHE": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -15230,6 +15302,12 @@
                 }
               }
             }
+          },
+          "nameHE": {
+            "type": "string"
+          },
+          "descriptionHE": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -17232,6 +17310,12 @@
                                 "slug": {
                                   "type": "string"
                                 },
+                                "nameHE": {
+                                  "type": "string"
+                                },
+                                "descriptionHE": {
+                                  "type": "string"
+                                },
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -17443,6 +17527,12 @@
                                     }
                                   }
                                 },
+                                "nameHE": {
+                                  "type": "string"
+                                },
+                                "descriptionHE": {
+                                  "type": "string"
+                                },
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -17509,6 +17599,12 @@
                                   }
                                 }
                               }
+                            },
+                            "titleHE": {
+                              "type": "string"
+                            },
+                            "descriptionHE": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -20840,6 +20936,12 @@
                                       "slug": {
                                         "type": "string"
                                       },
+                                      "nameHE": {
+                                        "type": "string"
+                                      },
+                                      "descriptionHE": {
+                                        "type": "string"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -21051,6 +21153,12 @@
                                           }
                                         }
                                       },
+                                      "nameHE": {
+                                        "type": "string"
+                                      },
+                                      "descriptionHE": {
+                                        "type": "string"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -21117,6 +21225,12 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "titleHE": {
+                                    "type": "string"
+                                  },
+                                  "descriptionHE": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -23486,6 +23600,12 @@
                             "slug": {
                               "type": "string"
                             },
+                            "nameHE": {
+                              "type": "string"
+                            },
+                            "descriptionHE": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -23697,6 +23817,12 @@
                                 }
                               }
                             },
+                            "nameHE": {
+                              "type": "string"
+                            },
+                            "descriptionHE": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -23763,6 +23889,12 @@
                               }
                             }
                           }
+                        },
+                        "titleHE": {
+                          "type": "string"
+                        },
+                        "descriptionHE": {
+                          "type": "string"
                         },
                         "createdAt": {
                           "type": "string",
@@ -24934,6 +25066,12 @@
                   "example": "string or id"
                 }
               },
+              "titleHE": {
+                "type": "string"
+              },
+              "descriptionHE": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -25681,6 +25819,12 @@
                         "slug": {
                           "type": "string"
                         },
+                        "nameHE": {
+                          "type": "string"
+                        },
+                        "descriptionHE": {
+                          "type": "string"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -25891,6 +26035,12 @@
                               }
                             }
                           }
+                        },
+                        "nameHE": {
+                          "type": "string"
+                        },
+                        "descriptionHE": {
+                          "type": "string"
                         },
                         "createdAt": {
                           "type": "string",
@@ -26715,6 +26865,12 @@
                         }
                       }
                     },
+                    "titleHE": {
+                      "type": "string"
+                    },
+                    "descriptionHE": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -27146,6 +27302,12 @@
                 }
               }
             }
+          },
+          "titleHE": {
+            "type": "string"
+          },
+          "descriptionHE": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -29806,6 +29968,12 @@
                   "slug": {
                     "type": "string"
                   },
+                  "nameHE": {
+                    "type": "string"
+                  },
+                  "descriptionHE": {
+                    "type": "string"
+                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"
@@ -30016,6 +30184,12 @@
                         }
                       }
                     }
+                  },
+                  "nameHE": {
+                    "type": "string"
+                  },
+                  "descriptionHE": {
+                    "type": "string"
                   },
                   "createdAt": {
                     "type": "string",
@@ -30839,6 +31013,12 @@
                     }
                   }
                 }
+              },
+              "titleHE": {
+                "type": "string"
+              },
+              "descriptionHE": {
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",

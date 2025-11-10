@@ -52,6 +52,22 @@
       "relation": "oneToMany",
       "target": "api::product.product",
       "mappedBy": "collection"
+    },
+    "nameHE": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "descriptionHE": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
