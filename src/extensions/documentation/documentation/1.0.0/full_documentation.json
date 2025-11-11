@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-11T03:57:12.418Z"
+    "x-generation-date": "2025-11-11T04:39:53.077Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -9651,6 +9651,9 @@
                                   "descriptionHE": {
                                     "type": "string"
                                   },
+                                  "show_in_carousel": {
+                                    "type": "boolean"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -12815,6 +12818,9 @@
                 "descriptionHE": {
                   "type": "string"
                 },
+                "show_in_carousel": {
+                  "type": "boolean"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -15255,6 +15261,9 @@
                 "descriptionHE": {
                   "type": "string"
                 },
+                "show_in_carousel": {
+                  "type": "boolean"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -17611,6 +17620,9 @@
                             },
                             "descriptionHE": {
                               "type": "string"
+                            },
+                            "show_in_carousel": {
+                              "type": "boolean"
                             },
                             "createdAt": {
                               "type": "string",
@@ -21238,6 +21250,9 @@
                                   "descriptionHE": {
                                     "type": "string"
                                   },
+                                  "show_in_carousel": {
+                                    "type": "boolean"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -23902,6 +23917,9 @@
                         "descriptionHE": {
                           "type": "string"
                         },
+                        "show_in_carousel": {
+                          "type": "boolean"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -25077,6 +25095,9 @@
               },
               "descriptionHE": {
                 "type": "string"
+              },
+              "show_in_carousel": {
+                "type": "boolean"
               },
               "locale": {
                 "type": "string"
@@ -26877,6 +26898,9 @@
                     "descriptionHE": {
                       "type": "string"
                     },
+                    "show_in_carousel": {
+                      "type": "boolean"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -27314,6 +27338,9 @@
           },
           "descriptionHE": {
             "type": "string"
+          },
+          "show_in_carousel": {
+            "type": "boolean"
           },
           "createdAt": {
             "type": "string",
@@ -31025,6 +31052,9 @@
               },
               "descriptionHE": {
                 "type": "string"
+              },
+              "show_in_carousel": {
+                "type": "boolean"
               },
               "createdAt": {
                 "type": "string",

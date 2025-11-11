@@ -992,6 +992,12 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    show_in_carousel: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
