@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "admin_panel_accounts",
+  "info": {
+    "singularName": "admin-panel-account",
+    "pluralName": "admin-panel-accounts",
+    "displayName": "Admin Panel Account"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "login": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password"
+    }
+  }
+}

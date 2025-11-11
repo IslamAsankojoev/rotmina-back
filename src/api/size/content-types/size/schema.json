@@ -21,7 +21,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true
     },
     "sort_order": {
       "type": "integer",
@@ -29,7 +31,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "unique": false
     },
     "slug": {
       "type": "string",
@@ -37,7 +40,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "unique": true
     }
   }
 }

@@ -21,7 +21,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true
     },
     "code": {
       "type": "string",
@@ -29,7 +31,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false,
+      "unique": true
     },
     "slug": {
       "type": "string",
@@ -37,7 +41,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true
     },
     "hex": {
       "type": "string",
@@ -45,7 +51,9 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true,
+      "unique": true
     }
   }
 }
