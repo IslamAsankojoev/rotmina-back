@@ -429,7 +429,7 @@ export interface ApiAdminPanelAccountAdminPanelAccount
     > &
       Schema.Attribute.Private;
     login: Schema.Attribute.String;
-    password: Schema.Attribute.Password;
+    password: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
