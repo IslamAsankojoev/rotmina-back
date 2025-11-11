@@ -59,6 +59,7 @@
           "localized": false
         }
       },
+      "required": true,
       "unique": true
     },
     "nameHE": {
