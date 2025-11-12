@@ -45,15 +45,19 @@
       "required": true,
       "unique": true
     },
-    "hex": {
-      "type": "string",
+    "image": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
+      "multiple": false,
       "required": true,
-      "unique": true
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }

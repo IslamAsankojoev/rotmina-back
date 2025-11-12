@@ -501,6 +501,12 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    top_image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -596,12 +602,11 @@ export interface ApiColorColor extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hex: Schema.Attribute.String &
+    image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     locale: Schema.Attribute.String;
@@ -1011,13 +1016,13 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text &
+    description: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    descriptionHE: Schema.Attribute.Text &
+    descriptionHE: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1131,6 +1136,38 @@ export interface ApiSalePopupSalePopup extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSiteImageSiteImage extends Struct.SingleTypeSchema {
+  collectionName: 'site_images';
+  info: {
+    displayName: 'Site Image';
+    pluralName: 'site-images';
+    singularName: 'site-image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::site-image.site-image'
+    > &
+      Schema.Attribute.Private;
+    login: Schema.Attribute.Media<'images' | 'files'>;
+    my_story: Schema.Attribute.Media<'files' | 'images'>;
+    order_success_modal: Schema.Attribute.Media<'images' | 'files'>;
+    personal_stylist: Schema.Attribute.Media<'files' | 'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    return_exchange: Schema.Attribute.Media<'images' | 'files', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1749,6 +1786,7 @@ declare module '@strapi/strapi' {
       'api::personal-stylist.personal-stylist': ApiPersonalStylistPersonalStylist;
       'api::product.product': ApiProductProduct;
       'api::sale-popup.sale-popup': ApiSalePopupSalePopup;
+      'api::site-image.site-image': ApiSiteImageSiteImage;
       'api::size.size': ApiSizeSize;
       'api::variant.variant': ApiVariantVariant;
       'plugin::content-releases.release': PluginContentReleasesRelease;

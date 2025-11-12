@@ -31,14 +31,6 @@
         }
       }
     },
-    "description": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "variants": {
       "type": "relation",
       "relation": "oneToMany",
@@ -71,16 +63,24 @@
         }
       }
     },
-    "descriptionHE": {
-      "type": "text",
+    "show_in_carousel": {
+      "type": "boolean",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "show_in_carousel": {
-      "type": "boolean",
+    "description": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "descriptionHE": {
+      "type": "blocks",
       "pluginOptions": {
         "i18n": {
           "localized": true

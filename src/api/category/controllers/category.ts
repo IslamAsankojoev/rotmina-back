@@ -13,7 +13,11 @@ export default factories.createCoreController('api::category.category', ({ strap
       data.map(async (category) => {
         const categoryWithProducts = await strapi.documents('api::category.category').findOne({
           documentId: category.documentId,
-          populate: ['products'],
+          populate: {
+            products: true,
+            top_image: true,
+            image: true,
+          },
           locale,
           status: 'published',
         })
@@ -37,7 +41,11 @@ export default factories.createCoreController('api::category.category', ({ strap
 
     const categoryWithProducts = await strapi.documents('api::category.category').findOne({
       documentId: category.documentId,
-      populate: ['products'],
+      populate: {
+        products: true,
+        top_image: true,
+        image: true,
+      },
       locale,
       status: 'published',
     })
@@ -62,6 +70,7 @@ export default factories.createCoreController('api::category.category', ({ strap
       },
       populate: {
         image: true,
+        top_image: true,
       },
       status: 'published',
     })
