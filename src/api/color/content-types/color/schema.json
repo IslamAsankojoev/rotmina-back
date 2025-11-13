@@ -9,49 +9,25 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "required": true,
       "unique": true
     },
     "code": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "required": false,
       "unique": true
     },
     "slug": {
       "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
       "required": true,
       "unique": true
     },
     "image": {
       "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
       "multiple": false,
       "required": true,
       "allowedTypes": [
