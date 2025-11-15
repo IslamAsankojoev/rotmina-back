@@ -7,7 +7,6 @@ import { factories } from '@strapi/strapi'
 export default factories.createCoreController('api::category.category', ({ strapi }) => ({
   async find(ctx) {
     const { data, meta } = await super.find(ctx)
-    const locale = (ctx.query.locale as string) || undefined
 
     const dataWithCount = await Promise.all(
       data.map(async (category) => {
@@ -18,7 +17,6 @@ export default factories.createCoreController('api::category.category', ({ strap
             top_image: true,
             image: true,
           },
-          locale,
           status: 'published',
         })
 
@@ -37,7 +35,6 @@ export default factories.createCoreController('api::category.category', ({ strap
   async findOne(ctx) {
     const response = await super.findOne(ctx)
     const category = response.data
-    const locale = (ctx.query.locale as string) || undefined
 
     const categoryWithProducts = await strapi.documents('api::category.category').findOne({
       documentId: category.documentId,
@@ -46,7 +43,6 @@ export default factories.createCoreController('api::category.category', ({ strap
         top_image: true,
         image: true,
       },
-      locale,
       status: 'published',
     })
 

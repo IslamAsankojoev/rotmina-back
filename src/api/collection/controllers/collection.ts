@@ -12,7 +12,10 @@ export default factories.createCoreController('api::collection.collection', ({ s
       data.map(async (collection) => {
         const collectionWithProducts = await strapi.documents('api::collection.collection').findOne({
           documentId: collection.documentId,
-          populate: ['products'],
+          populate: {
+            products: true,
+            image: true,
+          },
           status: 'published'
         })
         
@@ -34,7 +37,10 @@ export default factories.createCoreController('api::collection.collection', ({ s
 
     const collectionWithProducts = await strapi.documents('api::collection.collection').findOne({
       documentId: collection.documentId,
-      populate: ['products'],
+      populate: {
+        products: true,
+        image: true,
+      },
       status: 'published'
     })
     
