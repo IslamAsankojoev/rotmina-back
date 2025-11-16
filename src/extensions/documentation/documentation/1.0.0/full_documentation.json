@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-15T05:14:00.690Z"
+    "x-generation-date": "2025-11-16T07:22:56.603Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -10102,6 +10102,12 @@
                                   },
                                   "description": {},
                                   "descriptionHE": {},
+                                  "short_description": {
+                                    "type": "string"
+                                  },
+                                  "short_descriptionHE": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -13657,6 +13663,12 @@
                 },
                 "description": {},
                 "descriptionHE": {},
+                "short_description": {
+                  "type": "string"
+                },
+                "short_descriptionHE": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -16480,6 +16492,12 @@
                 },
                 "description": {},
                 "descriptionHE": {},
+                "short_description": {
+                  "type": "string"
+                },
+                "short_descriptionHE": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -19578,6 +19596,12 @@
                             },
                             "description": {},
                             "descriptionHE": {},
+                            "short_description": {
+                              "type": "string"
+                            },
+                            "short_descriptionHE": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -23332,6 +23356,12 @@
                                   },
                                   "description": {},
                                   "descriptionHE": {},
+                                  "short_description": {
+                                    "type": "string"
+                                  },
+                                  "short_descriptionHE": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -26376,6 +26406,12 @@
                         },
                         "description": {},
                         "descriptionHE": {},
+                        "short_description": {
+                          "type": "string"
+                        },
+                        "short_descriptionHE": {
+                          "type": "string"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -27551,6 +27587,12 @@
               },
               "description": {},
               "descriptionHE": {},
+              "short_description": {
+                "type": "string"
+              },
+              "short_descriptionHE": {
+                "type": "string"
+              },
               "locale": {
                 "type": "string"
               },
@@ -29475,6 +29517,12 @@
                     },
                     "description": {},
                     "descriptionHE": {},
+                    "short_description": {
+                      "type": "string"
+                    },
+                    "short_descriptionHE": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -30041,6 +30089,12 @@
           },
           "description": {},
           "descriptionHE": {},
+          "short_description": {
+            "type": "string"
+          },
+          "short_descriptionHE": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -36024,6 +36078,12 @@
               },
               "description": {},
               "descriptionHE": {},
+              "short_description": {
+                "type": "string"
+              },
+              "short_descriptionHE": {
+                "type": "string"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"

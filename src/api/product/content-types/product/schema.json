@@ -52,6 +52,12 @@
     },
     "descriptionHE": {
       "type": "blocks"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "short_descriptionHE": {
+      "type": "text"
     }
   }
 }

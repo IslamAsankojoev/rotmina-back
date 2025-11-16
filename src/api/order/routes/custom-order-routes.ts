@@ -10,5 +10,10 @@ export default {
       path: '/orders/my-orders',
       handler: 'order.findMyOrders',
     },
+    {
+      method: 'PUT',
+      path: '/orders/:orderId/change-status',
+      handler: 'order.changeOrderStatus',
+    },
   ],
 };

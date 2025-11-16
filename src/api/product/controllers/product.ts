@@ -97,6 +97,7 @@ export default factories.createCoreController('api::product.product', ({ strapi 
           },
         },
         populate: {
+          gallery: true,
           category: true,
           collection: true,
           variants: {
@@ -233,6 +234,7 @@ export default factories.createCoreController('api::product.product', ({ strapi 
       const updatedProduct = await strapi.documents('api::product.product').findOne({
         documentId: productId,
         populate: {
+          gallery: true,
           category: true,
           collection: true,
           variants: {

@@ -189,4 +189,94 @@ export default factories.createCoreController('api::order.order', ({ strapi }) =
       return ctx.internalServerError(`Error fetching orders: ${error.message}`)
     }
   },
+  async changeOrderStatus(ctx) {
+    try {
+      const orderId = ctx.params.orderId || ctx.params.id
+      
+      if (!orderId) {
+        return ctx.badRequest('Order ID is required')
+      }
+
+      // Получаем заказ с элементами заказа и вариантами
+      const order = await strapi.documents('api::order.order').findOne({
+        documentId: orderId,
+        populate: {
+          order_items: {
+            populate: {
+              variant: true,
+            },
+          },
+        },
+        status: 'published',
+      })
+
+      if (!order) {
+        return ctx.notFound('Order not found')
+      }
+
+      // Обновляем статус оплаты на 'paid'
+      await strapi.documents('api::order.order').update({
+        documentId: orderId,
+        data: {
+          payment_status: 'paid',
+        },
+      })
+
+      // Публикуем заказ, чтобы он не был в статусе "modified"
+      await strapi.documents('api::order.order').publish({
+        documentId: orderId,
+      })
+
+      // Если есть элементы заказа с вариантами, уменьшаем stock
+      if (order.order_items && Array.isArray(order.order_items)) {
+        for (const orderItem of order.order_items) {
+          // Проверяем, что это продукт (есть variant) и variant существует
+          if (orderItem.type === 'product' && orderItem.variant) {
+            const variant = await strapi.documents('api::variant.variant').findOne({
+              documentId: orderItem.variant.documentId,
+              status: 'published',
+            })
+
+            if (variant && variant.stock !== undefined) {
+              const newStock = Math.max(0, variant.stock - orderItem.quantity)
+              
+              await strapi.documents('api::variant.variant').update({
+                documentId: variant.documentId,
+                data: {
+                  stock: newStock,
+                },
+              })
+            }
+          }
+        }
+      }
+
+      // Возвращаем обновленный заказ
+      const updatedOrder = await strapi.documents('api::order.order').findOne({
+        documentId: orderId,
+        populate: {
+          order_items: {
+            populate: {
+              variant: true,
+              gift_card: true,
+              personal_stylist: true,
+            },
+          },
+          shipping_address: true,
+          billing_address: true,
+          users_permissions_user: true,
+        },
+        status: 'published',
+      })
+
+      return ctx.send({
+        success: true,
+        data: updatedOrder,
+        message: 'Order status successfully changed to paid and stock updated',
+      })
+    } catch (error) {
+      console.error('Error changing order status:', error)
+      return ctx.internalServerError(`Error changing order status: ${error.message}`)
+    }
+  },
 }))

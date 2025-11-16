@@ -784,6 +784,8 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    short_description: Schema.Attribute.Text;
+    short_descriptionHE: Schema.Attribute.Text;
     show_in_carousel: Schema.Attribute.Boolean;
     slug: Schema.Attribute.String;
     title: Schema.Attribute.String;
